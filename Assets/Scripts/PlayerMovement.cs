@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Movement
+    [Header("Movement")]
     public float moveSpeed;
     public Transform orientation;
     float horizontalInput;
     float verticalInput;
     Vector3 moveDirection;
     Rigidbody rb;
+    public float groundDrag;
+
+    [Header("Ground Check")]
+    public float playerHeight;
+    public LayerMask isGround;
+    bool grounded;
 
     void Start()
     {
@@ -19,7 +25,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
+        // Ground check
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGround);
+
         CheckInput();
+
+        // Handle drag
+        if (grounded) 
+            rb.drag = groundDrag;
+        else 
+            rb.drag = 0;
     }
 
     void FixedUpdate()
