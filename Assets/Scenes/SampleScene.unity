@@ -264,7 +264,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545276243}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: dc0bb50512145414b93cbf4996a00ebc, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -459,7 +459,7 @@ Transform:
   m_Children:
   - {fileID: 61055192}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213617951
 GameObject:
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 1216998768}
   - component: {fileID: 1216998767}
   - component: {fileID: 1216998766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256034727
 GameObject:
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 1256034730}
   - component: {fileID: 1256034729}
   - component: {fileID: 1256034728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 1256034727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -752,7 +752,7 @@ Transform:
   - {fileID: 1213617952}
   - {fileID: 1863003275}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2033709333
 Rigidbody:
@@ -782,5 +782,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d425d0fda2f53d94aa9f9ed262adc6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  walkSpeed: 5
+  sprintSpeed: 6.5
   orientation: {fileID: 1213617952}
+  groundDrag: 5
+  jumpForce: 5
+  jumpCooldown: 0.25
+  airMultiplier: 0.2
+  crouchSpeed: 3.5
+  crouchYScale: 0.5
+  jumpKey: 32
+  crouchKey: 306
+  sprintKey: 304
+  playerHeight: 2
+  isGround:
+    serializedVersion: 2
+    m_Bits: 64
+  state: 0
