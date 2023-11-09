@@ -7,6 +7,8 @@ using UnityEngine;
 public class InspectionSystem : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject cameraHolder;
     [SerializeField] private float pickupRange;
 
     public GameObject inspection;
@@ -23,9 +25,16 @@ public class InspectionSystem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                playerCamera.GetComponent<PlayerCamera>().enabled = false;
+                cameraHolder.GetComponent<MoveCamera>().enabled = false;
+                player.GetComponent<PhysicsPickup>().enabled = false;
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = false;
+
                 inspection.SetActive(true);
                 inspectableObject.TurnOnInspection(index);
-                Debug.Log("Inspected");
+                Debug.Log("Inspected item no. " + index);
             }
         }
 
