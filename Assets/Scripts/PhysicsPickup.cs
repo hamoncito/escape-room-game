@@ -21,10 +21,14 @@ public class PhysicsPickup : MonoBehaviour
                 return;
             }
 
+            RaycastHit hitInfo;
             Ray cameraRay = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            if(Physics.Raycast(cameraRay, out RaycastHit HitInfo, pickupRange, isGrabbable)) {
-                currObj = HitInfo.rigidbody;
+
+            // Grabbed
+            if (Physics.Raycast(cameraRay, out hitInfo, pickupRange, isGrabbable)) {
+                currObj = hitInfo.rigidbody;
                 currObj.useGravity = false;
+                Debug.Log("grabbed");
             }
         }
         
