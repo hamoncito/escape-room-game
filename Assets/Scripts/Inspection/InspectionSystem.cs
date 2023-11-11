@@ -23,7 +23,7 @@ public class InspectionSystem : MonoBehaviour
         // Inspected
         if (GetComponent<Collider>().Raycast(cameraRay, out hitInfo, pickupRange))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 playerCamera.GetComponent<PlayerCamera>().enabled = false;
                 cameraHolder.GetComponent<MoveCamera>().enabled = false;
@@ -35,6 +35,7 @@ public class InspectionSystem : MonoBehaviour
                 inspection.SetActive(true);
                 inspectableObject.TurnOnInspection(index);
                 Debug.Log("Inspected item no. " + index);
+
             }
         }
 
