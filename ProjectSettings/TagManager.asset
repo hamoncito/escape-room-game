@@ -14,7 +14,7 @@ TagManager:
   - isGround
   - isGrabbable
   - isInspectionObject
-  - 
+  - InspectionPostProcessing
   - 
   - 
   - 
