@@ -34,6 +34,7 @@ public class InspectionSystem : MonoBehaviour
                 playerCamera.GetComponent<PlayerCamera>().enabled = false;
                 cameraHolder.GetComponent<MoveCamera>().enabled = false;
                 player.GetComponent<PhysicsPickup>().enabled = false;
+                player.GetComponent<PlayerMovement>().enabled = false;
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
