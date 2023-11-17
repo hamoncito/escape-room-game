@@ -13,6 +13,7 @@ public class InspectionSystem : MonoBehaviour
     [SerializeField] private float pickupRange;
 
     public Button exitButton;
+    public GameObject inspectTip;
     public GameObject inspection;
     public InspectableObject inspectableObject;
 
@@ -20,15 +21,19 @@ public class InspectionSystem : MonoBehaviour
     {
         exitButton.onClick.AddListener(TurnCursorOff);
         inspection.SetActive(false);
+        inspectTip.SetActive(false);
     }
     private void Update()
     {
+        inspectTip.SetActive(false);
         RaycastHit hitInfo;
         Ray cameraRay = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
         // Inspected
         if (GetComponent<Collider>().Raycast(cameraRay, out hitInfo, pickupRange))
         {
+            inspectTip.SetActive(true);
+            
             if (Input.GetKey(KeyCode.E))
             {
                 playerCamera.GetComponent<PlayerCamera>().enabled = false;
@@ -41,7 +46,7 @@ public class InspectionSystem : MonoBehaviour
 
                 inspection.SetActive(true);
                 inspectableObject.TurnOnInspectionObject();
-                Debug.Log("Inspected item");
+                Debug.Log("Inspected item - InspectionSystem");
             }
         }
 
