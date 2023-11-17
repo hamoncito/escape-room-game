@@ -6,7 +6,11 @@ using UnityEngine;
 public class InspectableObject : MonoBehaviour
 {
     public GameObject inspectableObject;
-    
+
+    private void Awake()
+    {
+        TurnOffInspectionObject();
+    }
     public void TurnOnInspectionObject()
     {
         inspectableObject.SetActive(true);
