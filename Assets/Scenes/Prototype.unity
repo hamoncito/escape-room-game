@@ -533,8 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4fbe0bb2dd9b944ba34c1bb50a23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 120
-  sensY: 120
+  sensX: 500
+  sensY: 500
   orientation: {fileID: 1446737641}
 --- !u!114 &296611097
 MonoBehaviour:
@@ -1278,7 +1278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectableObject: {fileID: 567506359}
-  inspectableObjects: []
 --- !u!4 &589013525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4528267784794318, guid: 4b7e2afae84d5aa4b881c4348964870b, type: 3}
@@ -1536,7 +1535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectableObject: {fileID: 679499002}
-  inspectableObjects: []
 --- !u!4 &702840575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4528267784794318, guid: 4b7e2afae84d5aa4b881c4348964870b, type: 3}
@@ -3269,6 +3267,30 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 481052155}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1907967358}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 481052156}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -5221,7 +5243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectableObject: {fileID: 2013965303}
-  inspectableObjects: []
 --- !u!114 &2022092814
 MonoBehaviour:
   m_ObjectHideFlags: 0
