@@ -5,17 +5,33 @@ using UnityEngine;
 
 public class InspectableObject : MonoBehaviour
 {
-    public GameObject[] inspectionObjects;
-    private int currIndex;
+    public GameObject inspectableObject;
+    public GameObject[] inspectableObjects;
     
-    public void TurnOnInspection(int index)
+    public void TurnOnInspectionObject()
     {
-        currIndex = index;
-        inspectionObjects[index].SetActive(true);
+        inspectableObject.SetActive(true);
+    }
+
+    public void TurnOffInspectionObject()
+    {
+        inspectableObject.SetActive(false);
+    }
+
+    public void TurnOnInspection()
+    {
+        for (int i = 0; i < inspectableObjects.Length; i++)
+        {
+            inspectableObjects[i].SetActive(true); 
+        }
     }
 
     public void TurnOffInspection()
     {
-        inspectionObjects[currIndex].SetActive(false);
+        for (int i = 0; i < inspectableObjects.Length; i++)
+        {
+            inspectableObjects[i].SetActive(false);
+        }
+
     }
 }

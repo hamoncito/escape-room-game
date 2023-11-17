@@ -6,6 +6,7 @@ public class Rotate : MonoBehaviour
 {
     private Vector3 lastPos, currPos;
     public float rotationSpeed = -0.2f;
+
     
     void Start()
     {

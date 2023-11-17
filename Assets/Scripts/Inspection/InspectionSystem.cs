@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InspectionSystem : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class InspectionSystem : MonoBehaviour
     [SerializeField] private GameObject cameraHolder;
     [SerializeField] private float pickupRange;
 
+    public Button exitButton;
     public GameObject inspection;
     public InspectableObject inspectableObject;
-    public int index;
 
+    private void Awake()
+    {
+        exitButton.onClick.AddListener(TurnCursorOff);
+        inspection.SetActive(false);
+    }
     private void Update()
     {
         RaycastHit hitInfo;
@@ -23,21 +29,27 @@ public class InspectionSystem : MonoBehaviour
         // Inspected
         if (GetComponent<Collider>().Raycast(cameraRay, out hitInfo, pickupRange))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 playerCamera.GetComponent<PlayerCamera>().enabled = false;
                 cameraHolder.GetComponent<MoveCamera>().enabled = false;
                 player.GetComponent<PhysicsPickup>().enabled = false;
 
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = false;
+                Cursor.visible = true;
 
                 inspection.SetActive(true);
-                inspectableObject.TurnOnInspection(index);
-                Debug.Log("Inspected item no. " + index);
+                inspectableObject.TurnOnInspectionObject();
+                Debug.Log("Inspected item");
             }
         }
 
     }
+
+    public void TurnCursorOff()
+    {
+        Cursor.visible = false;
+    }
+
 
 }
