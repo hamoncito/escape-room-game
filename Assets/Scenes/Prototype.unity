@@ -5783,6 +5783,11 @@ GameObject:
   - component: {fileID: 64273936767962969}
   - component: {fileID: 64273936767962968}
   - component: {fileID: 64273936767962967}
+  - component: {fileID: 64273936767962974}
+  - component: {fileID: 64273936767962973}
+  - component: {fileID: 64273936767962972}
+  - component: {fileID: 64273936767962976}
+  - component: {fileID: 64273936767962977}
   m_Layer: 0
   m_Name: Interactive Fridge
   m_TagString: Untagged
@@ -6304,7 +6309,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &33599440634834860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6414,6 +6419,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029505908, y: 2.1533504, z: 0.7005041}
   m_Center: {x: 0.45224836, y: 1.0766752, z: 0.00000023841858}
+--- !u!65 &64273936767962972
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137499401157273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.93400264, y: 0.04, z: 0.56}
+  m_Center: {x: 0, y: 1.778, z: 0.00000023841858}
+--- !u!65 &64273936767962973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137499401157273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.93400264, y: 0.04, z: 0.56}
+  m_Center: {x: 0, y: 0.7859, z: 0.00000023841858}
+--- !u!65 &64273936767962974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137499401157273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.93400264, y: 0.04, z: 0.56}
+  m_Center: {x: 0, y: 1.12, z: 0.00000023841858}
+--- !u!65 &64273936767962976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137499401157273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.17, z: 0.5}
+  m_Center: {x: 0.24, y: 2.04, z: 0}
+--- !u!65 &64273936767962977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137499401157273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.93, y: 2.1533504, z: 0.02950591}
+  m_Center: {x: 0, y: 1.0766752, z: -0.32}
 --- !u!54 &64359447100771400
 Rigidbody:
   m_ObjectHideFlags: 0
