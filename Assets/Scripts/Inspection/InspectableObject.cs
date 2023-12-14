@@ -6,8 +6,11 @@ using UnityEngine;
 public class InspectableObject : MonoBehaviour
 {
     public GameObject inspectableObject;
-    public GameObject[] inspectableObjects;
-    
+
+    private void Awake()
+    {
+        TurnOffInspectionObject();
+    }
     public void TurnOnInspectionObject()
     {
         inspectableObject.SetActive(true);
@@ -16,22 +19,5 @@ public class InspectableObject : MonoBehaviour
     public void TurnOffInspectionObject()
     {
         inspectableObject.SetActive(false);
-    }
-
-    public void TurnOnInspection()
-    {
-        for (int i = 0; i < inspectableObjects.Length; i++)
-        {
-            inspectableObjects[i].SetActive(true); 
-        }
-    }
-
-    public void TurnOffInspection()
-    {
-        for (int i = 0; i < inspectableObjects.Length; i++)
-        {
-            inspectableObjects[i].SetActive(false);
-        }
-
     }
 }
