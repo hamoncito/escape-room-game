@@ -5,14 +5,21 @@ using TMPro;
 using UnityEngine;
 
 public class Breath : MonoBehaviour
-{   
+{
+    [SerializeField] private AudioClip breathe, suffocation;
     [SerializeField] private TextMeshProUGUI oxygenIndicator;
+    [SerializeField] private float breathRate = 0.1f;
 
+    private AudioSource head;
     public float oxygenLevel = 1f;
-    private float breathRate = 0.001f;
 
     private void Start()
     {
+        head = GetComponent<AudioSource>();
+        head.clip = breathe;
+        head.loop = true;
+        head.Play();
+
         Breathe();
     }
 
@@ -28,6 +35,10 @@ public class Breath : MonoBehaviour
         else
         {
             oxygenIndicator.text = "You died!";
+            head.Stop();
+            head.clip = suffocation;
+            head.loop = false;
+            head.Play();
         }
     }
 
@@ -38,7 +49,6 @@ public class Breath : MonoBehaviour
 
     public void ReplenishOxygen(float oxygen)
     {
-        Debug.Log("Replenished: " + oxygen);
         oxygenLevel = Mathf.Clamp(oxygenLevel + oxygen, 0f, 1f);
         UpdateDisplay();
     }
